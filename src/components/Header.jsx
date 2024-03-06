@@ -1,3 +1,4 @@
+import 
 import { brainwave } from "../assets";
 import { navigation } from "../constants";
 
@@ -22,7 +23,14 @@ const Headrer = () => {
           items-center justify-center m-auto lg:flex-row"
           >
             {navigation.map((items) => (
-              <a key={items.id} href={items.url}>
+              <a
+                key={items.id}
+                href={items.url}
+                className={`block relative font-code text-2xl 
+                uppercase text-n-1 transition-colors hover:text-color-1
+                ${items.onlyMobile ? "lg:hidden" : ""}
+                px-6 py-6 md:py-8 lg:-mr-0.25 lg:text-xs lg:font-semibold `}
+              >
                 {items.title}
               </a>
             ))}
